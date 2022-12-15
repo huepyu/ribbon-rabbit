@@ -1,0 +1,19 @@
+{
+  "name": "ribbon-lucky-v2",
+  "version": "2.0.0",
+  "description": "리본 행운상점",
+  "main": "main.js",
+  "scripts": {
+    "start": "npx http-server ./ -o"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huepyu/ribbon-lucky.git"
+  },
+  "author": "huepyu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/huepyu/ribbon-lucky-v2/issues"
+  },
+  "homepage": "https://github.com/huepyu/ribbon-lucky-v2#readme"
+}
