@@ -990,7 +990,8 @@ function Step5({ state }) {
         ))}
       </div>
       <div className="s5-drawers-text">
-        # 특별 보상 당첨자 (초기화 대상, 총 {state.specialDrawers.length}명)
+        # 특별 보상 당첨자 (당첨 버프 초기화 대상, 총{' '}
+        {state.specialDrawers.length}명)
         {state.specialDrawers.map((id, idx) => {
           const { prefix, name } = state.members.find((m) => m.id === id)
 
@@ -1003,7 +1004,7 @@ function Step5({ state }) {
         })}
       </div>
       <div className="s5-drawers-text">
-        # 불참자 (초기화 대상, 총 {state.absentees.length}명)
+        # 불참자 (당첨 버프 초기화 대상, 총 {state.absentees.length}명)
         {state.absentees.map((id, idx) => {
           const { prefix, name } = state.members.find((m) => m.id === id)
 
