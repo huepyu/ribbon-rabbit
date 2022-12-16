@@ -13,7 +13,7 @@ const members = [
   { kingdom: KINGDOM_A, name: '꾸우루밍', ratio: 2, prefix: '☆' },
   { kingdom: KINGDOM_A, name: '김쨩아', ratio: 2, prefix: '☆' },
 
-  // 일반 킹덤원 42명
+  // 일반 킹덤원 41명
   { kingdom: KINGDOM_A, name: 'HyunA', ratio: 1, prefix: '' },
   { kingdom: KINGDOM_A, name: '유한량', ratio: 1, prefix: '' },
   { kingdom: KINGDOM_A, name: '유기농브로콜리', ratio: 1, prefix: '' },
@@ -52,7 +52,6 @@ const members = [
   { kingdom: KINGDOM_A, name: '소금맛아이스', ratio: 1, prefix: '' },
   { kingdom: KINGDOM_A, name: '초원의초밥', ratio: 1, prefix: '' },
   { kingdom: KINGDOM_A, name: '복수의망치', ratio: 1, prefix: '' },
-  { kingdom: KINGDOM_A, name: '김주요', ratio: 1, prefix: '' },
   { kingdom: KINGDOM_A, name: 'ESNA', ratio: 1, prefix: '' },
   { kingdom: KINGDOM_A, name: '명탐정밍또지', ratio: 1, prefix: '' },
   { kingdom: KINGDOM_A, name: '클린아티', ratio: 1, prefix: '' },
