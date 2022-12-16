@@ -42,13 +42,10 @@ function App() {
 
   function createNewState() {
     return {
+      kingdom: null,
       products: [],
       productsMembersMap: {},
-      members: members.map((m) => ({
-        ...m,
-        stack: 0,
-        rewards: [],
-      })),
+      members: [],
       // 당첨자
       drawers: [],
       // 불참자
@@ -71,8 +68,8 @@ function App() {
 
   const goNext = React.useCallback(
     (e) => {
-      e.preventDefault()
-      if (step !== 5) {
+      e?.preventDefault()
+      if (step !== 6) {
         sessionStorage.setItem(STORAGE_KEY, JSON.stringify(state))
         setStep((v) => v + 1)
       }
@@ -90,15 +87,17 @@ function App() {
   function getStepText() {
     switch (step) {
       case 1:
-        return '상품 선택 단계'
+        return '킹덤 선택 단계'
       case 2:
-        return '불참자 선택 단계'
+        return state.kingdom + ': 상품 선택 단계'
       case 3:
-        return '추첨 대상 선별 단계'
+        return state.kingdom + ': 불참자 선택 단계'
       case 4:
-        return '추첨 단계'
+        return state.kingdom + ': 추첨 대상 선별 단계'
       case 5:
-        return '추첨 결과'
+        return state.kingdom + ': 추첨 단계'
+      case 6:
+        return state.kingdom + ': 추첨 결과'
     }
   }
 
@@ -118,7 +117,9 @@ function App() {
               <p className="title-text">
                 {kingdomName} 행운상점 추첨 <span>by 휴퓨</span>
               </p>
-              <p className="title-step">{getStepText()}</p>
+              <p className="title-step">
+                {getStepText()} ({step}/6)
+              </p>
             </div>
             <button className="title-btn reset-btn" onClick={reset}>
               초기화
@@ -151,14 +152,80 @@ function App() {
         {step === 4 && (
           <Step4 goNext={goNext} state={state} setState={setState} />
         )}
-        {step === 5 && <Step5 state={state} setState={setState} />}
+        {step === 5 && (
+          <Step5 goNext={goNext} state={state} setState={setState} />
+        )}
+        {step === 6 && <Step6 state={state} setState={setState} />}
       </div>
     </ErrorBoundary>
   )
 }
 
-// 스텝 1: 상품 등록 단계
+// 스텝 1: 킹덤 선택 단계
 function Step1({ goNext, state, setState }) {
+  const [kingdom, setKingdom] = React.useState(state.kingdom)
+  const [updated, setUpdated] = React.useState(false)
+
+  function selectKingdom(e, kingdom) {
+    e.preventDefault()
+
+    setKingdom(kingdom)
+  }
+
+  function next(e) {
+    e.preventDefault()
+
+    setUpdated(true)
+    setState((v) => ({
+      ...v,
+      kingdom,
+      members: members
+        .filter((m) => m.kingdom === kingdom)
+        .map((m) => ({
+          ...m,
+          stack: 0,
+          rewards: [],
+        })),
+    }))
+  }
+
+  React.useEffect(() => {
+    if (state.kingdom) {
+      setKingdom(state.kingdom)
+
+      if (updated) {
+        goNext()
+      }
+    }
+  }, [updated, state.kingdom])
+
+  return (
+    <div className="step">
+      <div className="main s1-wrapper">
+        <div className="s1-kingdoms">
+          <div
+            className={`s1-kingdom ${kingdom === KINGDOM_A ? 's1-active' : ''}`}
+            onClick={(e) => selectKingdom(e, KINGDOM_A)}
+          >
+            {KINGDOM_A}
+          </div>
+          <div
+            className={`s1-kingdom ${kingdom === KINGDOM_B ? 's1-active' : ''}`}
+            onClick={(e) => selectKingdom(e, KINGDOM_B)}
+          >
+            {KINGDOM_B}
+          </div>
+        </div>
+      </div>
+      <button className="next-btn" onClick={next}>
+        저장 및 다음 단계
+      </button>
+    </div>
+  )
+}
+
+// 스텝 2: 상품 등록 단계
+function Step2({ goNext, state, setState }) {
   const leftRef = React.useRef(null)
 
   const step1Products = React.useMemo(() => {
@@ -205,40 +272,40 @@ function Step1({ goNext, state, setState }) {
   return (
     <div className="step">
       <div className="main">
-        <div className="s1-left" ref={leftRef}>
-          <p className="s1-our-products-title">행운 상점 추첨 순서</p>
-          <p className="s1-delete-desc">클릭 시 삭제됩니다.</p>
+        <div className="s2-left" ref={leftRef}>
+          <p className="s2-our-products-title">행운 상점 추첨 순서</p>
+          <p className="s2-delete-desc">클릭 시 삭제됩니다.</p>
           {state.products.map((p, idx) => (
             <div
               key={idx}
-              className="s1-our-product"
+              className="s2-our-product"
               onClick={(e) => deleteProduct(e, idx)}
             >
               {p.name}
               {p.rewards.map((r, idx) => (
-                <p key={idx} className="s1-product-reward">
+                <p key={idx} className="s2-product-reward">
                   {r}
                 </p>
               ))}
             </div>
           ))}
         </div>
-        <div className="s1-right">
-          <p className="s1-right-title">
+        <div className="s2-right">
+          <p className="s2-right-title">
             오늘 행운 상점의 상품을 순서대로 골라주세요.
           </p>
           {step1Products.map((lineProducts, lineIdx) => {
             return (
-              <div className="s1-products-grid" key={lineIdx}>
+              <div className="s2-products-grid" key={lineIdx}>
                 {lineProducts.map((p) => (
                   <div
                     key={p.id}
-                    className={`s1-product ${p.type}`}
+                    className={`s2-product ${p.type}`}
                     onClick={(e) => addProduct(e, p)}
                   >
-                    <p className="s1-product-title">{p.name}</p>
+                    <p className="s2-product-title">{p.name}</p>
                     {p.rewards.map((r, idx) => (
-                      <p key={idx} className="s1-product-reward">
+                      <p key={idx} className="s2-product-reward">
                         {r}
                       </p>
                     ))}
@@ -248,16 +315,16 @@ function Step1({ goNext, state, setState }) {
             )
           })}
 
-          {/* <div className="s1-products-grid">
+          {/* <div className="s2-products-grid">
             {step1Products.map((p) => (
               <div
                 key={p.id}
-                className={`s1-product ${p.type}`}
+                className={`s2-product ${p.type}`}
                 onClick={(e) => addProduct(e, p)}
               >
-                <p className="s1-product-title">{p.name}</p>
+                <p className="s2-product-title">{p.name}</p>
                 {p.rewards.map((r, idx) => (
-                  <p key={idx} className="s1-product-reward">
+                  <p key={idx} className="s2-product-reward">
                     {r}
                   </p>
                 ))}
@@ -277,10 +344,10 @@ function Step1({ goNext, state, setState }) {
   )
 }
 
-// 스텝 2: 불참자 선택 단계
-function Step2({ goNext, state, setState }) {
+// 스텝 3: 불참자 선택 단계
+function Step3({ goNext, state, setState }) {
   const [absentees, setAbsentees] = React.useState(
-    members.map((m) => ({
+    state.members.map((m) => ({
       ...m,
       target: state.absentees.includes(m.id),
     })),
@@ -318,20 +385,20 @@ function Step2({ goNext, state, setState }) {
 
   return (
     <div className="step">
-      <div className="main s2-wrapper">
-        <div className="s4-absentees">
-          <div className="s2-absentees-grid">
+      <div className="main s3-wrapper">
+        <div className="s3-absentees">
+          <div className="s3-absentees-grid">
             {absentees.map((a) => {
               return (
                 <div
                   key={a.id}
-                  className={`s2-absentee ${
-                    a.target ? 's2-absentee-target' : ''
+                  className={`s3-absentee ${
+                    a.target ? 's3-absentee-target' : ''
                   }`}
                   onClick={(e) => toggleAbsentee(e, a.id)}
                 >
                   <p>{a.name}</p>
-                  {a.target && <p className="s2-absentee-text">불참자</p>}
+                  {a.target && <p className="s3-absentee-text">불참자</p>}
                 </div>
               )
             })}
@@ -345,8 +412,8 @@ function Step2({ goNext, state, setState }) {
   )
 }
 
-// 스텝 3: 인원 선별 단계
-function Step3({ goNext, state, setState }) {
+// 스텝 4: 인원 선별 단계
+function Step4({ goNext, state, setState }) {
   const groupSetRef = React.useRef(new Set())
   const [dups] = React.useState(() => {
     const list = state.products.map((p) => {
@@ -376,7 +443,7 @@ function Step3({ goNext, state, setState }) {
     const productsMembersMap = {}
 
     for (let group of groupSetRef.current) {
-      productsMembersMap[group] = members
+      productsMembersMap[group] = state.members
         .filter((m) => !state.absentees.includes(m.id))
         .map((m) => {
           const target =
@@ -465,32 +532,32 @@ function Step3({ goNext, state, setState }) {
 
   return (
     <div className="step">
-      <div className="main s3-wrapper">
+      <div className="main s4-wrapper">
         {state.products.map((p, idx) => (
           <div
             key={idx}
-            className={`s3-product ${p.type}${dups[idx] ? ' s3-dup' : ''}`}
+            className={`s4-product ${p.type}${dups[idx] ? ' s4-dup' : ''}`}
           >
-            <div className="s3-product-title">{p.name}</div>
-            <div className="s3-product-rewards">
+            <div className="s4-product-title">{p.name}</div>
+            <div className="s4-product-rewards">
               {p.rewards.map((r, idx) => (
-                <p key={idx} className="s3-product-reward">
+                <p key={idx} className="s4-product-reward">
                   {r}
                 </p>
               ))}
             </div>
             {!dups[idx] && state.productsMembersMap[p.group] && (
-              <div className="s3-members">
-                <div className="s3-member-list">
+              <div className="s4-members">
+                <div className="s4-member-list">
                   {state.productsMembersMap[p.group].map((m, idx) => (
                     <div
-                      className="s3-member"
+                      className="s4-member"
                       key={idx}
                       onClick={(e) => toggleTarget(e, p.group, m.id)}
                     >
-                      <div className="s3-member-name">
+                      <div className="s4-member-name">
                         <span
-                          className={m.target ? 's3-included' : 's3-excluded'}
+                          className={m.target ? 's4-included' : 's4-excluded'}
                         >
                           {m.prefix}
                           {m.name}
@@ -506,8 +573,8 @@ function Step3({ goNext, state, setState }) {
                         )}
                       </div>
                       <button
-                        className={`s3-member-btn ${
-                          m.target ? 's3-exclude-btn' : 's3-include-btn'
+                        className={`s4-member-btn ${
+                          m.target ? 's4-exclude-btn' : 's4-include-btn'
                         }`}
                         onClick={(e) => toggleTarget(e, p.group, m.id)}
                       >
@@ -516,10 +583,10 @@ function Step3({ goNext, state, setState }) {
                     </div>
                   ))}
                 </div>
-                <div className="s3-bottom-wrapper">
-                  <div className="s3-target-clone">
+                <div className="s4-bottom-wrapper">
+                  <div className="s4-target-clone">
                     <select
-                      className="s3-clone-select"
+                      className="s4-clone-select"
                       onChange={(e) => changeCloneTarget(e, idx)}
                       value={selectMap[idx].value}
                     >
@@ -534,20 +601,20 @@ function Step3({ goNext, state, setState }) {
                         )
                       })}
                     </select>
-                    <div className="s3-clone-btn-wrapper">
+                    <div className="s4-clone-btn-wrapper">
                       명단을{' '}
                       <div
-                        className="s3-target-btn s3-clone-btn"
+                        className="s4-target-btn s4-clone-btn"
                         onClick={(e) => cloneTarget(e, idx, p.group)}
                       >
                         복사
                       </div>
                     </div>
                   </div>
-                  <div className="s3-target-bottom">
-                    <div className="s3-total-members">
+                  <div className="s4-target-bottom">
+                    <div className="s4-total-members">
                       총&nbsp;
-                      <span className="s3-current-members">
+                      <span className="s4-current-members">
                         {
                           state.productsMembersMap[p.group].filter(
                             (v) => v.target,
@@ -556,15 +623,15 @@ function Step3({ goNext, state, setState }) {
                       </span>
                       /{state.members.length}명
                     </div>
-                    <div className="s3-target-btns">
+                    <div className="s4-target-btns">
                       <div
-                        className="s3-target-btn s3-include-btn"
+                        className="s4-target-btn s4-include-btn"
                         onClick={(e) => setAll(e, p.group, true)}
                       >
                         전체 포함
                       </div>
                       <div
-                        className="s3-target-btn s3-exclude-btn"
+                        className="s4-target-btn s4-exclude-btn"
                         onClick={(e) => setAll(e, p.group, false)}
                       >
                         전체 제외
@@ -584,8 +651,8 @@ function Step3({ goNext, state, setState }) {
   )
 }
 
-// 스텝 4: 추첨 단계
-function Step4({ goNext, state, setState }) {
+// 스텝 5: 추첨 단계
+function Step5({ goNext, state, setState }) {
   const step4Rewards = React.useMemo(() => {
     const rewards = []
     state.products.forEach((product) => {
@@ -755,7 +822,7 @@ function Step4({ goNext, state, setState }) {
   function next(e) {
     e?.preventDefault()
 
-    rewardDivRef.current.classList.add('s4-disappear')
+    rewardDivRef.current.classList.add('s5-disappear')
 
     setTimeout(() => {
       rewardsIdxRef.current += 1
@@ -775,7 +842,7 @@ function Step4({ goNext, state, setState }) {
       })
 
       setTimeout(() => {
-        rewardDivRef.current.classList.remove('s4-disappear')
+        rewardDivRef.current.classList.remove('s5-disappear')
       }, 50)
     }, 250)
   }
@@ -784,7 +851,7 @@ function Step4({ goNext, state, setState }) {
     <div className="step">
       <div className="step-4">
         <div
-          className="s4-reward-wrapper"
+          className="s5-reward-wrapper"
           ref={rewardDivRef}
           style={{
             background: drawingState.currentReward.product.isSpecial
@@ -792,59 +859,59 @@ function Step4({ goNext, state, setState }) {
               : '',
           }}
         >
-          {/* <div className="s4-reward-dummy" /> */}
-          {/* <div className="s2-reward-vertical-wrapper">
+          {/* <div className="s5-reward-dummy" /> */}
+          {/* <div className="s3-reward-vertical-wrapper">
 
           </div> */}
-          <div className="s4-reward">
-            <p className="s4-reward-type">
+          <div className="s5-reward">
+            <p className="s5-reward-type">
               {drawingState.currentReward.product.isSpecial
                 ? '특별 보상'
                 : '일반 보상'}
             </p>
-            <p className="s4-reward-product">
+            <p className="s5-reward-product">
               {drawingState.currentReward.product.name}
             </p>
             <img
-              className="s4-reward-image"
+              className="s5-reward-image"
               src={groupIcon[drawingState.currentReward.product.group]}
               alt={drawingState.currentReward.product.name}
             />
-            <p className="s4-reward-name">
+            <p className="s5-reward-name">
               {drawingState.currentReward.reward}
             </p>
             {drawingState.drawerId && (
-              <p className="s4-reward-drawer">
+              <p className="s5-reward-drawer">
                 {members.find((m) => m.id === drawingState.drawerId).name}
               </p>
             )}
             {!drawingState.drawerId && (
-              <button className="s4-reward-btn s4-drawing-btn" onClick={draw}>
+              <button className="s5-reward-btn s5-drawing-btn" onClick={draw}>
                 추첨
               </button>
             )}
             {!drawingState.finished && (
-              <p className="s4-reward-info">
+              <p className="s5-reward-info">
                 상품 추천 진행 중 ({rewardsIdxRef.current + 1}/
                 {step4Rewards.length})
               </p>
             )}
             {drawingState.finished && (
-              <p className="s4-reward-info s4-finish">
+              <p className="s5-reward-info s5-finish">
                 상품 추첨 완료! 고생하셨습니다!
               </p>
             )}
           </div>
           {drawingState.drawerId && (
-            <div className="s4-reward-btn-wrapper">
+            <div className="s5-reward-btn-wrapper">
               {!drawingState.finished && (
-                <button className="s4-reward-btn s4-next-btn" onClick={next}>
+                <button className="s5-reward-btn s5-next-btn" onClick={next}>
                   다음
                 </button>
               )}
               {drawingState.finished && (
                 <button
-                  className="s4-reward-btn s4-finish-btn"
+                  className="s5-reward-btn s5-finish-btn"
                   onClick={goNext}
                 >
                   출력
@@ -852,30 +919,30 @@ function Step4({ goNext, state, setState }) {
               )}
             </div>
           )}
-          {!drawingState.drawerId && <div className="s4-reward-btn-wrapper" />}
+          {!drawingState.drawerId && <div className="s5-reward-btn-wrapper" />}
         </div>
-        <div className="s4-members">
-          <div className="s4-members-grid">
+        <div className="s5-members">
+          <div className="s5-members-grid">
             {state.members.map((m) => {
               const target = drawingState.targetIds.includes(m.id)
 
               const classes = [
-                's4-member',
-                m.stack <= 2 ? 's4-stack' + m.stack : 's4-gold-stack',
+                's5-member',
+                m.stack <= 2 ? 's5-stack' + m.stack : 's5-gold-stack',
               ]
 
               if (highlightedId === m.id) {
-                classes.push('s4-highlighted')
+                classes.push('s5-highlighted')
               }
 
               if (!target) {
-                classes.push('s4-not-target')
+                classes.push('s5-not-target')
               }
 
               return (
                 <div className={classes.join(' ')} key={m.id}>
-                  <div className="s4-member-label">
-                    <p className="s4-member-name">
+                  <div className="s5-member-label">
+                    <p className="s5-member-name">
                       {m.prefix}
                       {m.name}
                     </p>
@@ -893,7 +960,7 @@ function Step4({ goNext, state, setState }) {
                     )}
                   </div>
                   {m.rewards.map((r, idx) => (
-                    <p key={idx} className="s4-member-reward">
+                    <p key={idx} className="s5-member-reward">
                       {r}
                     </p>
                   ))}
@@ -907,8 +974,8 @@ function Step4({ goNext, state, setState }) {
   )
 }
 
-// 스텝 5: 추첨 결과
-function Step5({ state }) {
+// 스텝 6: 추첨 결과
+function Step6({ state }) {
   console.log(state)
 
   const gridColumn = React.useMemo(() => {
@@ -951,19 +1018,19 @@ function Step5({ state }) {
   })
 
   return (
-    <div className="s5-wrapper">
+    <div className="s6-wrapper">
       <div
-        className="s5-grid"
+        className="s6-grid"
         style={{ gridTemplateColumns: `repeat(${gridColumn}, 1fr)` }}
       >
         {state.drawers.map((d, idx) => (
-          <div className="s5-reward" key={idx}>
-            <div className="s5-reward-icon">
+          <div className="s6-reward" key={idx}>
+            <div className="s6-reward-icon">
               <img src={d.icon} alt={d.name} />
             </div>
-            <div className="s5-reward-detail">
-              <div className="s5-reward-name">{d.name}</div>
-              <div className="s5-reward-member">
+            <div className="s6-reward-detail">
+              <div className="s6-reward-name">{d.name}</div>
+              <div className="s6-reward-member">
                 {d.member.prefix}
                 {d.member.name}
               </div>
@@ -971,8 +1038,8 @@ function Step5({ state }) {
           </div>
         ))}
       </div>
-      <div className="s5-drawers-text">
-        # 당첨자
+      <div className="s6-drawers-text">
+        # {state.kingdom} - 당첨자
         {state.drawers.map((d, idx) => (
           <p key={idx}>
             {d.name} - {d.member.prefix}
@@ -980,17 +1047,17 @@ function Step5({ state }) {
           </p>
         ))}
       </div>
-      <div className="s5-drawers-text">
-        # 특별 보상 당첨 확률 증가 대상자
+      <div className="s6-drawers-text">
+        # {state.kingdom} - 특별 보상 당첨 확률 증가 대상자
         {levelUpMemberMap.map(({ title, members }, idx) => (
-          <div key={idx} className="s5-level-up-target">
+          <div key={idx} className="s6-level-up-target">
             <p>{title}</p>
             <p>{members.join(', ')}</p>
           </div>
         ))}
       </div>
-      <div className="s5-drawers-text">
-        # 특별 보상 당첨자 (당첨 버프 초기화 대상, 총{' '}
+      <div className="s6-drawers-text">
+        # {state.kingdom} - 특별 보상 당첨자 (당첨 버프 초기화 대상, 총{' '}
         {state.specialDrawers.length}명)
         {state.specialDrawers.map((id, idx) => {
           const { prefix, name } = state.members.find((m) => m.id === id)
@@ -1003,8 +1070,9 @@ function Step5({ state }) {
           )
         })}
       </div>
-      <div className="s5-drawers-text">
-        # 불참자 (당첨 버프 초기화 대상, 총 {state.absentees.length}명)
+      <div className="s6-drawers-text">
+        # {state.kingdom} - 불참자 (당첨 버프 초기화 대상, 총{' '}
+        {state.absentees.length}명)
         {state.absentees.map((id, idx) => {
           const { prefix, name } = state.members.find((m) => m.id === id)
 
