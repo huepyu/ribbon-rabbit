@@ -165,6 +165,7 @@ body {
     background-color: #f0f0f0;
     border-radius: 30px;
     font-size: 36px;
+    cursor: pointer;
 }
 
 .s1-kingdom:first-child {

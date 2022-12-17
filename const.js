@@ -1,7 +1,7 @@
 const kingdomName = 'Ribbon'
 
-const KINGDOM_A = 'Ribbon A 킹덤'
-const KINGDOM_B = 'Ribbon B 킹덤'
+const KINGDOM_A = 'Ribbon 단밤반'
+const KINGDOM_B = 'Ribbon 녕코반'
 
 const members = [
   // 운영진: 리본
