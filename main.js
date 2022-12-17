@@ -855,7 +855,7 @@ function Step5({ goNext, state, setState }) {
           ref={rewardDivRef}
           style={{
             background: drawingState.currentReward.product.isSpecial
-              ? 'no-repeat center/20% url("./assets/laurel_v2.png")'
+              ? 'no-repeat center/500px url("./assets/laurel_v2.png")'
               : '',
           }}
         >
