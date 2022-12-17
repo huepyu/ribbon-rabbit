@@ -273,12 +273,12 @@ body {
     padding: 20px;
 }
 
-.s3-absentees {
+.s3-participants {
     width: 80%;
     flex: 1;
 }
 
-.s3-absentees-grid {
+.s3-participants-grid {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-auto-rows: minmax(70px, auto);
@@ -287,7 +287,7 @@ body {
     padding: 8px;
 }
 
-.s3-absentee {
+.s3-participant {
     border-radius: 10px;
     color: #000;
     display: flex;
@@ -299,12 +299,12 @@ body {
     cursor: pointer;
 }
 
-.s3-absentee-target {
+.s3-participant-target {
     background-color: #323232;
     color: #fff;
 }
 
-.s3-absentee-text {
+.s3-participant-text {
     font-size: 12px;
 }
 
@@ -477,16 +477,6 @@ body {
     align-items: center;
     font-size: 10px;
     cursor: pointer;
-}
-
-.s4-include-btn {
-    background-color: #36c;
-    color: #fff;
-}
-
-.s4-exclude-btn {
-    background-color: #F24236;
-    color: #fff;
 }
 
 /* 스텝 5 */
@@ -786,5 +776,15 @@ body {
 
 .ratio-1024 {
     background-color: #ED254E;
+    color: #fff;
+}
+
+.include-btn {
+    background-color: #36c;
+    color: #fff;
+}
+
+.exclude-btn {
+    background-color: #F24236;
     color: #fff;
 }

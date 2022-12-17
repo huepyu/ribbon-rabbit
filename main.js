@@ -48,8 +48,8 @@ function App() {
       members: [],
       // 당첨자
       drawers: [],
-      // 불참자
-      absentees: [],
+      // 전체 참여자
+      participants: [],
       // 특별 보상 당첨자,
       specialDrawers: [],
       appVersion,
@@ -91,7 +91,7 @@ function App() {
       case 2:
         return state.kingdom + ': 상품 선택 단계'
       case 3:
-        return state.kingdom + ': 불참자 선택 단계'
+        return state.kingdom + ': 참여자 선택 단계'
       case 4:
         return state.kingdom + ': 추첨 대상 선별 단계'
       case 5:
@@ -344,34 +344,34 @@ function Step2({ goNext, state, setState }) {
   )
 }
 
-// 스텝 3: 불참자 선택 단계
+// 스텝 3: 참여자 선택 단계
 function Step3({ goNext, state, setState }) {
-  const [absentees, setAbsentees] = React.useState(
+  const [participants, setParticipants] = React.useState(
     state.members.map((m) => ({
       ...m,
-      target: state.absentees.includes(m.id),
+      target: state.participants.includes(m.id),
     })),
   )
 
-  function toggleAbsentee(e, id) {
+  function toggleParticipants(e, id) {
     e.preventDefault()
 
     setState((v) => {
-      let absentees = v.absentees
+      let participants = v.participants
 
-      if (absentees.includes(id)) {
-        absentees = absentees.filter((v) => !(v === id))
+      if (participants.includes(id)) {
+        participants = participants.filter((v) => !(v === id))
       } else {
-        absentees.push(id)
+        participants.push(id)
       }
 
       return {
         ...v,
-        absentees,
+        participants,
       }
     })
 
-    setAbsentees((v) => {
+    setParticipants((v) => {
       return v.map((m) => {
         if (m.id !== id) return m
 
@@ -383,29 +383,79 @@ function Step3({ goNext, state, setState }) {
     })
   }
 
+  function addAllParticipants(e) {
+    e.preventDefault()
+
+    const participants = state.members.map((m) => m.id)
+
+    setState((v) => ({
+      ...v,
+      participants,
+    }))
+
+    setParticipants((v) =>
+      v.map((m) => ({
+        ...m,
+        target: true,
+      })),
+    )
+  }
+
+  function removeAllParticipants(e) {
+    e.preventDefault()
+
+    setState((v) => ({
+      ...v,
+      participants: [],
+    }))
+
+    setParticipants((v) =>
+      v.map((m) => ({
+        ...m,
+        target: false,
+      })),
+    )
+  }
+
   return (
     <div className="step">
       <div className="main s3-wrapper">
-        <div className="s3-absentees">
-          <div className="s3-absentees-grid">
-            {absentees.map((a) => {
+        <div className="s3-participants">
+          <div className="s3-participants-grid">
+            {participants.map((a) => {
               return (
                 <div
                   key={a.id}
-                  className={`s3-absentee ${
-                    a.target ? 's3-absentee-target' : ''
+                  className={`s3-participant ${
+                    a.target ? 's3-participant-target' : ''
                   }`}
-                  onClick={(e) => toggleAbsentee(e, a.id)}
+                  onClick={(e) => toggleParticipants(e, a.id)}
                 >
                   <p>{a.name}</p>
-                  {a.target && <p className="s3-absentee-text">불참자</p>}
+                  {a.target && <p className="s3-participant-text">참여자</p>}
                 </div>
               )
             })}
+            <div
+              className="s3-participant include-btn"
+              onClick={addAllParticipants}
+            >
+              <p>전체 선택</p>
+            </div>
+            <div
+              className="s3-participant exclude-btn"
+              onClick={removeAllParticipants}
+            >
+              <p>전체 제외</p>
+            </div>
           </div>
         </div>
       </div>
-      <button className="next-btn" onClick={goNext}>
+      <button
+        className="next-btn"
+        disabled={!state.participants.length}
+        onClick={goNext}
+      >
         저장 및 다음 단계
       </button>
     </div>
@@ -444,7 +494,7 @@ function Step4({ goNext, state, setState }) {
 
     for (let group of groupSetRef.current) {
       productsMembersMap[group] = state.members
-        .filter((m) => !state.absentees.includes(m.id))
+        .filter((m) => state.participants.includes(m.id))
         .map((m) => {
           const target =
             state.productsMembersMap?.[group]?.find((v) => v.id === m.id)
@@ -579,7 +629,7 @@ function Step4({ goNext, state, setState }) {
                       </div>
                       <button
                         className={`s4-member-btn ${
-                          m.target ? 's4-exclude-btn' : 's4-include-btn'
+                          m.target ? 'exclude-btn' : 'include-btn'
                         }`}
                         onClick={(e) => toggleTarget(e, p.group, m.id)}
                       >
@@ -630,13 +680,13 @@ function Step4({ goNext, state, setState }) {
                     </div>
                     <div className="s4-target-btns">
                       <div
-                        className="s4-target-btn s4-include-btn"
+                        className="s4-target-btn include-btn"
                         onClick={(e) => setAll(e, p.group, true)}
                       >
                         전체 포함
                       </div>
                       <div
-                        className="s4-target-btn s4-exclude-btn"
+                        className="s4-target-btn exclude-btn"
                         onClick={(e) => setAll(e, p.group, false)}
                       >
                         전체 제외
@@ -1010,19 +1060,31 @@ function Step6({ state }) {
           (m) =>
             m.ratio === ratio &&
             !state.specialDrawers.includes(m.id) &&
-            !state.absentees.includes(m.id),
+            state.participants.includes(m.id),
         )
         .map((m) => `${m.prefix}${m.name}`)
       const title = `[x${ratio} -> x${nextRatio}], 총 ${members.length}명`
 
       return {
+        ratio,
         title,
         members,
+        length: members.length,
       }
     })
 
     return levelUpMemberMap
-  })
+      .sort((a, b) => {
+        return a.ratio - b.ratio
+      })
+      .filter((map) => map.length > 0)
+  }, [])
+
+  const absentees = React.useMemo(() => {
+    return state.members
+      .filter((m) => !state.participants.includes(m.id))
+      .map((m) => m.id)
+  }, [])
 
   return (
     <div className="s6-wrapper">
@@ -1078,9 +1140,9 @@ function Step6({ state }) {
         })}
       </div>
       <div className="s6-drawers-text">
-        # {state.kingdom} - 불참자 (당첨 버프 초기화 대상, 총{' '}
-        {state.absentees.length}명)
-        {state.absentees.map((id, idx) => {
+        # {state.kingdom} - 불참자 (당첨 버프 초기화 대상, 총 {absentees.length}
+        명)
+        {absentees.map((id, idx) => {
           const { prefix, name } = state.members.find((m) => m.id === id)
 
           return (
