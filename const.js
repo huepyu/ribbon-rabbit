@@ -4,7 +4,7 @@ const KINGDOM_A = 'Ribbon A 킹덤'
 const KINGDOM_B = 'Ribbon B 킹덤'
 
 const members = [
-  // 운영진 7명
+  // 운영진: 리본
   { kingdom: KINGDOM_B, name: '단밤', ratio: 2, prefix: '★' },
   { kingdom: KINGDOM_B, name: '주녕코', ratio: 2, prefix: '☆' },
   { kingdom: KINGDOM_A, name: '리망', ratio: 2, prefix: '☆' },
@@ -12,8 +12,15 @@ const members = [
   { kingdom: KINGDOM_A, name: '구름빛블루베리', ratio: 2, prefix: '☆' },
   { kingdom: KINGDOM_A, name: '꾸우루밍', ratio: 2, prefix: '☆' },
   { kingdom: KINGDOM_A, name: '김쨩아', ratio: 2, prefix: '☆' },
+  { kingdom: KINGDOM_A, name: '삐누', ratio: 2, prefix: '☆' },
 
-  // 일반 킹덤원 41명
+  // 운영진: 후냐
+  { kingdom: KINGDOM_A, name: '덕후냐', ratio: 2, prefix: '☆' },
+  { kingdom: KINGDOM_A, name: '쓰트', ratio: 2, prefix: '☆' },
+  { kingdom: KINGDOM_A, name: '날라리욤', ratio: 2, prefix: '☆' },
+  { kingdom: KINGDOM_A, name: '엘리', ratio: 2, prefix: '☆' },
+
+  // 일반 킹덤원: 리본
   { kingdom: KINGDOM_A, name: 'HyunA', ratio: 1, prefix: '' },
   { kingdom: KINGDOM_A, name: '유한량', ratio: 1, prefix: '' },
   { kingdom: KINGDOM_A, name: '유기농브로콜리', ratio: 1, prefix: '' },
@@ -21,7 +28,6 @@ const members = [
   { kingdom: KINGDOM_A, name: '닐라바닐라', ratio: 1, prefix: '' },
   { kingdom: KINGDOM_A, name: '다솜다솜', ratio: 1, prefix: '' },
   { kingdom: KINGDOM_A, name: '밍공이', ratio: 1, prefix: '' },
-  { kingdom: KINGDOM_A, name: '삐누', ratio: 1, prefix: '' },
   { kingdom: KINGDOM_A, name: '레미마르', ratio: 1, prefix: '' },
   { kingdom: KINGDOM_A, name: '므s', ratio: 1, prefix: '' },
   { kingdom: KINGDOM_A, name: '루다퀸', ratio: 1, prefix: '' },
