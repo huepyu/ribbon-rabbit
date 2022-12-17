@@ -740,35 +740,51 @@ body {
 }
 
 .ratio-2 {
-    background-color: #FF8600;
-    color: #fff;
+    background-color: #FFC15E;
+    color: #000;
 }
 
-.ratio-3,
 .ratio-4 {
-    background-color: #0E9594;
-    color: #fff;
+    background-color: #F7B05B;
+    color: #000;
 }
 
-.ratio-5,
-.ratio-6 {
-    background-color: #175676;
-    color: #fff;
-}
-
-.ratio-7,
 .ratio-8 {
-    background-color: #446DF6;
+    background-color: #F7934C;
     color: #fff;
 }
 
-.ratio-9,
-.ratio-10 {
-    background-color: #531CB3;
+.ratio-16 {
+    background-color: #5AC9C5;
     color: #fff;
 }
 
-.ratio-11 {
-    background-color: #D62839;
+.ratio-32 {
+    background-color: #07BEB8;
+    color: #fff;
+}
+
+.ratio-64 {
+    background-color: #00918D;
+    color: #fff;
+}
+
+.ratio-128 {
+    background-color: #807EC9;
+    color: #fff;
+}
+
+.ratio-256 {
+    background-color: #38369A;
+    color: #fff;
+}
+
+.ratio-512 {
+    background-color: #FF6786;
+    color: #fff;
+}
+
+.ratio-1028 {
+    background-color: #ED254E;
     color: #fff;
 }

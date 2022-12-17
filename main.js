@@ -530,6 +530,8 @@ function Step4({ goNext, state, setState }) {
     }))
   }
 
+  console.log(state)
+
   return (
     <div className="step">
       <div className="main s4-wrapper">
@@ -565,8 +567,11 @@ function Step4({ goNext, state, setState }) {
                         {m.ratio > 1 && (
                           <div
                             className={`ratio ratio-${
-                              m.ratio > 11 ? 11 : m.ratio
+                              m.ratio > 1024 ? 1024 : m.ratio
                             }`}
+                            style={{
+                              opacity: p.isSpecial ? 1 : 0.2,
+                            }}
                           >
                             x{m.ratio}
                           </div>
@@ -948,7 +953,9 @@ function Step5({ goNext, state, setState }) {
                     </p>
                     {m.ratio > 1 && (
                       <div
-                        className={`ratio ratio-${m.ratio > 11 ? 11 : m.ratio}`}
+                        className={`ratio ratio-${
+                          m.ratio > 1024 ? 1024 : m.ratio
+                        }`}
                         style={{
                           opacity: drawingState.currentReward.product.isSpecial
                             ? 1
