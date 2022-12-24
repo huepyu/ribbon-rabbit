@@ -145,6 +145,10 @@ body {
     color: #000 !important;
 }
 
+.hotpink {
+    background-color: #d3338e;
+}
+
 /* 스텝 1 */
 .s1-wrapper {
     padding: 20px;

@@ -27,6 +27,9 @@ const reward = {
 
   // 킹덤 침공전
   ivoryRidingDye: '아이보리 탈 것 염색약',
+
+  // 수도 마스터 잡화점
+  releasementScroll: '봉인 해제 주문서',
 }
 
 // for background-color, color
@@ -38,6 +41,7 @@ const productType = {
   water: 'water',
   tree: 'tree',
   normal_ivory: 'normal_ivory',
+  hotpink: 'hotpink',
 }
 
 const group = {
@@ -50,15 +54,16 @@ const group = {
 
   advancedPages: 'advancedPages', // 고급 페이지 실패
   advancedSkillBook: 'advancedSkillBook', // 고급 스킬북
+  reversalChance: 'reversalChance',
 
   throneSkillBook: 'throneSkillBook',
   darkMagicCrystal100: 'darkMagicCrystal100',
   blackRidingDye: 'blackRidingDye',
-  ivoryRidingDye: 'ivoryRidingDye',
-  defensiveKingdom: 'defensiveKingdom',
-  offensiveKingdom: 'offensiveKingdom',
-  reversalChance: 'reversalChance',
   amuletDoll: 'amuletDoll',
+
+  ivoryRidingDye: 'ivoryRidingDye',
+
+  releasementScroll: 'releasementScroll',
 }
 
 const groupIcon = {
@@ -79,6 +84,8 @@ const groupIcon = {
   amuletDoll: 'assets/items/amulet_doll.png',
 
   ivoryRidingDye: 'assets/items/ivory_riding_dye.png',
+
+  releasementScroll: 'assets/items/releasement_scroll.png',
 }
 
 const products = [
@@ -282,5 +289,13 @@ const products = [
     group: group.ivoryRidingDye,
     isSpecial: false,
     line: 7,
+  },
+  {
+    name: '수도 마스터 잡화점: 봉인 해제 주문서 2개',
+    rewards: [reward.releasementScroll, reward.releasementScroll],
+    type: productType.hotpink,
+    group: group.releasementScroll,
+    isSpecial: true,
+    line: 8,
   },
 ].map((p, idx) => ({ ...p, id: idx + 1 }))
