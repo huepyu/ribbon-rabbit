@@ -89,15 +89,15 @@ function App() {
       case 1:
         return '킹덤 선택 단계'
       case 2:
-        return state.kingdom + ': 상품 선택 단계'
+        return state.kingdom.name + ': 상품 선택 단계'
       case 3:
-        return state.kingdom + ': 참여자 선택 단계'
+        return state.kingdom.name + ': 참여자 선택 단계'
       case 4:
-        return state.kingdom + ': 추첨 대상 선별 단계'
+        return state.kingdom.name + ': 추첨 대상 선별 단계'
       case 5:
-        return state.kingdom + ': 추첨 단계'
+        return state.kingdom.name + ': 추첨 단계'
       case 6:
-        return state.kingdom + ': 추첨 결과'
+        return state.kingdom.name + ': 추첨 결과'
     }
   }
 
@@ -163,7 +163,9 @@ function App() {
 
 // 스텝 1: 킹덤 선택 단계
 function Step1({ goNext, state, setState }) {
-  const [kingdom, setKingdom] = React.useState(state.kingdom)
+  const [kingdom, setKingdom] = React.useState(
+    state.kingdom ?? { code: null, name: null },
+  )
   const [updated, setUpdated] = React.useState(false)
 
   function selectKingdom(e, kingdom) {
@@ -180,7 +182,7 @@ function Step1({ goNext, state, setState }) {
       ...v,
       kingdom,
       members: members
-        .filter((m) => m.kingdom === kingdom)
+        .filter((m) => m.kingdom === kingdom.code)
         .map((m) => ({
           ...m,
           stack: 0,
@@ -204,16 +206,20 @@ function Step1({ goNext, state, setState }) {
       <div className="main s1-wrapper">
         <div className="s1-kingdoms">
           <div
-            className={`s1-kingdom ${kingdom === KINGDOM_A ? 's1-active' : ''}`}
-            onClick={(e) => selectKingdom(e, KINGDOM_A)}
+            className={`s1-kingdom ${
+              kingdom.code === RIBBON_D.code ? 's1-active' : ''
+            }`}
+            onClick={(e) => selectKingdom(e, RIBBON_D)}
           >
-            {KINGDOM_A}
+            {RIBBON_D.name}
           </div>
           <div
-            className={`s1-kingdom ${kingdom === KINGDOM_B ? 's1-active' : ''}`}
-            onClick={(e) => selectKingdom(e, KINGDOM_B)}
+            className={`s1-kingdom ${
+              kingdom.code === RIBBON_N.code ? 's1-active' : ''
+            }`}
+            onClick={(e) => selectKingdom(e, RIBBON_N)}
           >
-            {KINGDOM_B}
+            {RIBBON_N.name}
           </div>
         </div>
       </div>
@@ -708,7 +714,7 @@ function Step4({ goNext, state, setState }) {
 
 // 스텝 5: 추첨 단계
 function Step5({ goNext, state, setState }) {
-  const step4Rewards = React.useMemo(() => {
+  const step5Rewards = React.useMemo(() => {
     const rewards = []
     state.products.forEach((product) => {
       product.rewards.forEach((reward) => {
@@ -729,7 +735,7 @@ function Step5({ goNext, state, setState }) {
 
   const [drawingState, setDrawingState] = React.useState(() => {
     const currentReward =
-      step4Rewards[
+      step5Rewards[
         drawingFinished ? rewardsIdxRef.current - 1 : rewardsIdxRef.current
       ]
 
@@ -750,7 +756,7 @@ function Step5({ goNext, state, setState }) {
   const [highlightedId, setHighlightedId] = React.useState(null)
 
   function isDrawingFinished() {
-    return step4Rewards.length === state.drawers.length
+    return step5Rewards.length === state.drawers.length
   }
 
   React.useEffect(() => {
@@ -862,7 +868,7 @@ function Step5({ goNext, state, setState }) {
       }
     })
 
-    const nextReward = step4Rewards[rewardsIdxRef.current + 1]
+    const nextReward = step5Rewards[rewardsIdxRef.current + 1]
     const finished = !nextReward
 
     setDrawingState((v) => ({
@@ -881,7 +887,7 @@ function Step5({ goNext, state, setState }) {
 
     setTimeout(() => {
       rewardsIdxRef.current += 1
-      const nextReward = step4Rewards[rewardsIdxRef.current]
+      const nextReward = step5Rewards[rewardsIdxRef.current]
 
       setDrawingState((v) => {
         return {
@@ -948,7 +954,7 @@ function Step5({ goNext, state, setState }) {
             {!drawingState.finished && (
               <p className="s5-reward-info">
                 상품 추천 진행 중 ({rewardsIdxRef.current + 1}/
-                {step4Rewards.length})
+                {step5Rewards.length})
               </p>
             )}
             {drawingState.finished && (
@@ -1086,6 +1092,35 @@ function Step6({ state }) {
       .map((m) => m.id)
   }, [])
 
+  const updateMapJson = React.useMemo(() => {
+    const reset = [...state.specialDrawers, ...absentees].map((id) => {
+      return state.members.find((m) => m.id === id).name
+    })
+
+    const promotion = {}
+
+    levelUpMemberMap.forEach((levelUpMember) => {
+      const nextRatio = levelUpMember.ratio * 2
+
+      if (promotion[nextRatio]) {
+        promotion[nextRatio] = [
+          ...promotion[nextRatio],
+          ...levelUpMember.members.map((name) => name.replace(/[☆★]/g, '')),
+        ]
+      } else {
+        promotion[nextRatio] = levelUpMember.members.map((name) =>
+          name.replace(/[☆★]/g, ''),
+        )
+      }
+    })
+
+    return JSON.stringify({
+      promotion,
+      reset,
+      target: state.kingdom.code.toLowerCase(),
+    })
+  }, [])
+
   return (
     <div className="s6-wrapper">
       <div
@@ -1108,7 +1143,7 @@ function Step6({ state }) {
         ))}
       </div>
       <div className="s6-drawers-text">
-        # {state.kingdom} - 당첨자
+        # {state.kingdom.name} - 당첨자
         {state.drawers.map((d, idx) => (
           <p key={idx}>
             {d.name} - {d.member.prefix}
@@ -1117,7 +1152,7 @@ function Step6({ state }) {
         ))}
       </div>
       <div className="s6-drawers-text">
-        # {state.kingdom} - 특별 보상 당첨 확률 증가 대상자
+        # {state.kingdom.name} - 특별 보상 당첨 확률 증가 대상자
         {levelUpMemberMap.map(({ title, members }, idx) => (
           <div key={idx} className="s6-level-up-target">
             <p>{title}</p>
@@ -1126,7 +1161,7 @@ function Step6({ state }) {
         ))}
       </div>
       <div className="s6-drawers-text">
-        # {state.kingdom} - 특별 보상 당첨자 (당첨 버프 초기화 대상, 총{' '}
+        # {state.kingdom.name} - 특별 보상 당첨자 (당첨 버프 초기화 대상, 총{' '}
         {state.specialDrawers.length}명)
         {state.specialDrawers.map((id, idx) => {
           const { prefix, name } = state.members.find((m) => m.id === id)
@@ -1140,7 +1175,8 @@ function Step6({ state }) {
         })}
       </div>
       <div className="s6-drawers-text">
-        # {state.kingdom} - 불참자 (당첨 버프 초기화 대상, 총 {absentees.length}
+        # {state.kingdom.name} - 불참자 (당첨 버프 초기화 대상, 총{' '}
+        {absentees.length}
         명)
         {absentees.map((id, idx) => {
           const { prefix, name } = state.members.find((m) => m.id === id)
@@ -1152,6 +1188,10 @@ function Step6({ state }) {
             </p>
           )
         })}
+      </div>
+      <div className="s6-drawers-text">
+        <p># 운영진 방에 아래 내용 복사해주세요.</p>
+        {updateMapJson}
       </div>
     </div>
   )
