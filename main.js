@@ -223,7 +223,7 @@ function Step1({ goNext, state, setState }) {
           </div>
         </div>
       </div>
-      <button className="next-btn" onClick={next}>
+      <button className="next-btn" disabled={!kingdom.code} onClick={next}>
         저장 및 다음 단계
       </button>
     </div>
@@ -812,6 +812,11 @@ function Step5({ goNext, state, setState }) {
 
   function draw(e) {
     e?.preventDefault()
+
+    if (drawingState.targetIds.length === 0) {
+      next()
+      return
+    }
 
     if (lockOnDrawingRef.current) {
       return

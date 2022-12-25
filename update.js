@@ -5,7 +5,7 @@ const update = jsonfile.readFileSync('update.json')
 const { target, promotion, reset } = update
 
 const members = jsonfile.readFileSync(`${target}.json`)
-jsonfile.writeFileSync(`${target}_backup.json`)
+jsonfile.writeFileSync(`${target}_backup.json`, members)
 console.log('백업 생성 완료')
 
 for (let resetMember of reset) {
