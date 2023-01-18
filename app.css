@@ -172,8 +172,8 @@ body {
     cursor: pointer;
 }
 
-.s1-kingdom:first-child {
-    margin-right: 20px;
+.s1-kingdom:not(:first-child) {
+    margin-left: 20px;
 }
 
 .s1-active {

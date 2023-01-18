@@ -221,6 +221,14 @@ function Step1({ goNext, state, setState }) {
           >
             {RIBBON_N.name}
           </div>
+          <div
+            className={`s1-kingdom ${
+              kingdom.code === RIBBON_Y.code ? 's1-active' : ''
+            }`}
+            onClick={(e) => selectKingdom(e, RIBBON_Y)}
+          >
+            {RIBBON_Y.name}
+          </div>
         </div>
       </div>
       <button className="next-btn" disabled={!kingdom.code} onClick={next}>

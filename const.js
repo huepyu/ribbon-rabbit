@@ -8,9 +8,10 @@ const RIBBON_N = {
   code: 'RIBBON_N',
   name: 'RIbbon 녕코반',
 }
-
-// const ribbonD = jsonfile.readFileSync('./ribbon_d.json')
-// const ribbonN = jsonfile.readFileSync('./ribbon_n.json')
+const RIBBON_Y = {
+  code: 'RIBBON_Y',
+  name: 'RIbbony',
+}
 
 let members = []
 
@@ -19,8 +20,9 @@ async function getMembers() {
 
   const ribbonD = (await axios.get('./ribbon_d.json')).data
   const ribbonN = (await axios.get('./ribbon_n.json')).data
+  const ribbonY = (await axios.get('./ribbon_y.json')).data
 
-  members = [...ribbonD, ...ribbonN]
+  members = [...ribbonD, ...ribbonN, ...ribbonY]
     .sort((a, b) => {
       const patternNumber = /[0-9]/
       const patternAlphabet = /[a-zA-Z]/
