@@ -292,5 +292,11 @@
     "name": "TheLunas",
     "ratio": 1,
     "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "대독스",
+    "ratio": 1,
+    "prefix": ""
   }
 ]
