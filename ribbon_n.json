@@ -1,1 +1,284 @@
-[{"kingdom":"RIBBON_N","name":"주녕코","ratio":"128","prefix":"☆"},{"kingdom":"RIBBON_N","name":"날라리욤","ratio":"256","prefix":"☆"},{"kingdom":"RIBBON_N","name":"엘리","ratio":"4","prefix":"☆"},{"kingdom":"RIBBON_N","name":"김쨩아","ratio":2,"prefix":"☆"},{"kingdom":"RIBBON_N","name":"구름빛블루베리","ratio":"16","prefix":"☆"},{"kingdom":"RIBBON_N","name":"나랑고양이","ratio":"128","prefix":"☆"},{"kingdom":"RIBBON_N","name":"총자비지","ratio":1,"prefix":""},{"kingdom":"RIBBON_N","name":"노견제","ratio":"2048","prefix":""},{"kingdom":"RIBBON_N","name":"DDOGAS","ratio":1,"prefix":""},{"kingdom":"RIBBON_N","name":"HyunA","ratio":1,"prefix":""},{"kingdom":"RIBBON_N","name":"탱X구","ratio":"2","prefix":""},{"kingdom":"RIBBON_N","name":"굿에프터눈","ratio":"64","prefix":""},{"kingdom":"RIBBON_N","name":"엘칼국수","ratio":"2","prefix":""},{"kingdom":"RIBBON_N","name":"심심후냐","ratio":"64","prefix":""},{"kingdom":"RIBBON_N","name":"유한량","ratio":"2","prefix":""},{"kingdom":"RIBBON_N","name":"아기코딱징","ratio":"2","prefix":""},{"kingdom":"RIBBON_N","name":"GORAPADUCK","ratio":1,"prefix":""},{"kingdom":"RIBBON_N","name":"유기농브로콜리","ratio":"512","prefix":""},{"kingdom":"RIBBON_N","name":"머라카냥","ratio":"512","prefix":""},{"kingdom":"RIBBON_N","name":"능람","ratio":"2048","prefix":""},{"kingdom":"RIBBON_N","name":"메디킬","ratio":"2","prefix":""},{"kingdom":"RIBBON_N","name":"때리지마라","ratio":"2048","prefix":""},{"kingdom":"RIBBON_N","name":"가유리","ratio":"128","prefix":""},{"kingdom":"RIBBON_N","name":"바람계곡의로사","ratio":"512","prefix":""},{"kingdom":"RIBBON_N","name":"규일이","ratio":1,"prefix":""},{"kingdom":"RIBBON_N","name":"복덩이","ratio":"2","prefix":""},{"kingdom":"RIBBON_N","name":"루다퀸","ratio":1,"prefix":""},{"kingdom":"RIBBON_N","name":"동방현","ratio":"16","prefix":""},{"kingdom":"RIBBON_N","name":"신이러브","ratio":"4","prefix":""},{"kingdom":"RIBBON_N","name":"소나기","ratio":"64","prefix":""},{"kingdom":"RIBBON_N","name":"505호","ratio":1,"prefix":""},{"kingdom":"RIBBON_N","name":"클린아티","ratio":"2048","prefix":""},{"kingdom":"RIBBON_N","name":"햇사리","ratio":"64","prefix":""},{"kingdom":"RIBBON_N","name":"아기까망","ratio":"2","prefix":""},{"kingdom":"RIBBON_N","name":"아기하양","ratio":1,"prefix":""},{"kingdom":"RIBBON_N","name":"유명한스윙","ratio":"128","prefix":""},{"kingdom":"RIBBON_N","name":"단밤찐빵","ratio":"2048","prefix":""},{"kingdom":"RIBBON_N","name":"희네입니다","ratio":"2048","prefix":""},{"kingdom":"RIBBON_N","name":"옥봉팔","ratio":1,"prefix":""},{"kingdom":"RIBBON_N","name":"망고띠","ratio":1,"prefix":""},{"kingdom":"RIBBON_N","name":"유기농고사리","ratio":"2","prefix":""},{"kingdom":"RIBBON_N","name":"소금맛아이스","ratio":1,"prefix":""},{"kingdom":"RIBBON_N","name":"춤추는나무","ratio":"32","prefix":""},{"kingdom":"RIBBON_N","name":"딸기케이크공주","ratio":1,"prefix":""},{"kingdom":"RIBBON_N","name":"ESNA","ratio":"2","prefix":""},{"kingdom":"RIBBON_N","name":"곰뮤새","ratio":1,"prefix":""},{"kingdom":"RIBBON_N","name":"루비이통","ratio":"2","prefix":""},{"kingdom":"RIBBON_N","name":"시카스카","ratio":1,"prefix":""},{"kingdom":"RIBBON_N","name":"용감한꼬꼬","ratio":1,"prefix":""}]
+[
+  {
+    "kingdom": "RIBBON_N",
+    "name": "주녕코",
+    "ratio": "256",
+    "prefix": "☆"
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "날라리욤",
+    "ratio": 2,
+    "prefix": "☆"
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "엘리",
+    "ratio": "8",
+    "prefix": "☆"
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "김쨩아",
+    "ratio": "4",
+    "prefix": "☆"
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "구름빛블루베리",
+    "ratio": "32",
+    "prefix": "☆"
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "나랑고양이",
+    "ratio": "256",
+    "prefix": "☆"
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "총자비지",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "노견제",
+    "ratio": "4096",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "HyunA",
+    "ratio": "2",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "탱X구",
+    "ratio": "4",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "굿에프터눈",
+    "ratio": "128",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "엘칼국수",
+    "ratio": "4",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "심심후냐",
+    "ratio": "128",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "유한량",
+    "ratio": "4",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "아기코딱징",
+    "ratio": "4",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "GORAPADUCK",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "유기농브로콜리",
+    "ratio": "1024",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "머라카냥",
+    "ratio": "1024",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "능람",
+    "ratio": "4096",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "메디킬",
+    "ratio": "4",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "때리지마라",
+    "ratio": "4096",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "가유리",
+    "ratio": "256",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "바람계곡의로사",
+    "ratio": "1024",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "규일이",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "복덩이",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "루다퀸",
+    "ratio": "2",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "동방현",
+    "ratio": "32",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "신이러브",
+    "ratio": "8",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "소나기",
+    "ratio": "128",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "505호",
+    "ratio": "2",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "클린아티",
+    "ratio": "4096",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "햇사리",
+    "ratio": "128",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "아기까망",
+    "ratio": "4",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "아기하양",
+    "ratio": "2",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "유명한스윙",
+    "ratio": "256",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "단밤찐빵",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "희네입니다",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "옥봉팔",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "유기농고사리",
+    "ratio": "4",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "소금맛아이스",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "춤추는나무",
+    "ratio": "64",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "딸기케이크공주",
+    "ratio": "2",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "ESNA",
+    "ratio": "4",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "곰뮤새",
+    "ratio": "2",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "루비이통",
+    "ratio": "4",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "시카스카",
+    "ratio": "2",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_N",
+    "name": "용감한꼬꼬",
+    "ratio": 1,
+    "prefix": ""
+  }
+]

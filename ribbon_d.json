@@ -1,1 +1,296 @@
-[{"kingdom":"RIBBON_D","name":"단밤","ratio":"512","prefix":"★"},{"kingdom":"RIBBON_D","name":"휴퓨","ratio":"2048","prefix":"☆"},{"kingdom":"RIBBON_D","name":"쓰트","ratio":"2048","prefix":"☆"},{"kingdom":"RIBBON_D","name":"삐누","ratio":"8","prefix":"☆"},{"kingdom":"RIBBON_D","name":"리망","ratio":"128","prefix":"☆"},{"kingdom":"RIBBON_D","name":"꾸우루밍","ratio":2,"prefix":"☆"},{"kingdom":"RIBBON_D","name":"덕밤","ratio":"128","prefix":""},{"kingdom":"RIBBON_D","name":"아치베르","ratio":1,"prefix":""},{"kingdom":"RIBBON_D","name":"깡호야","ratio":1,"prefix":""},{"kingdom":"RIBBON_D","name":"오키드블룸","ratio":"1024","prefix":""},{"kingdom":"RIBBON_D","name":"걸밤","ratio":"128","prefix":""},{"kingdom":"RIBBON_D","name":"버거블랑","ratio":1,"prefix":""},{"kingdom":"RIBBON_D","name":"빡곰이","ratio":1,"prefix":""},{"kingdom":"RIBBON_D","name":"여명의마도","ratio":"1024","prefix":""},{"kingdom":"RIBBON_D","name":"우타동","ratio":"1024","prefix":""},{"kingdom":"RIBBON_D","name":"연우닝","ratio":"2","prefix":""},{"kingdom":"RIBBON_D","name":"킴과자","ratio":"2","prefix":""},{"kingdom":"RIBBON_D","name":"물리선생님","ratio":"1024","prefix":""},{"kingdom":"RIBBON_D","name":"닐라바닐라","ratio":"1024","prefix":""},{"kingdom":"RIBBON_D","name":"왱두냐","ratio":"1024","prefix":""},{"kingdom":"RIBBON_D","name":"츄뚱이","ratio":1,"prefix":""},{"kingdom":"RIBBON_D","name":"밍공이","ratio":"4","prefix":""},{"kingdom":"RIBBON_D","name":"다솜다솜","ratio":"1024","prefix":""},{"kingdom":"RIBBON_D","name":"슈슈베리","ratio":"256","prefix":""},{"kingdom":"RIBBON_D","name":"당연한진찰","ratio":"1024","prefix":""},{"kingdom":"RIBBON_D","name":"레미마르","ratio":"16","prefix":""},{"kingdom":"RIBBON_D","name":"므s","ratio":"16","prefix":""},{"kingdom":"RIBBON_D","name":"몽뭉몽뭉잉","ratio":"16","prefix":""},{"kingdom":"RIBBON_D","name":"나이야후냐","ratio":1,"prefix":""},{"kingdom":"RIBBON_D","name":"대독스","ratio":1,"prefix":""},{"kingdom":"RIBBON_D","name":"맛깔고등어로버프","ratio":1,"prefix":""},{"kingdom":"RIBBON_D","name":"행복이숑","ratio":1,"prefix":""},{"kingdom":"RIBBON_D","name":"김은님","ratio":1,"prefix":""},{"kingdom":"RIBBON_D","name":"찌이S2","ratio":1,"prefix":""},{"kingdom":"RIBBON_D","name":"요끄","ratio":1,"prefix":""},{"kingdom":"RIBBON_D","name":"아이솔칸","ratio":"2","prefix":""},{"kingdom":"RIBBON_D","name":"르미르르미","ratio":"4","prefix":""},{"kingdom":"RIBBON_D","name":"약골오빠","ratio":1,"prefix":""},{"kingdom":"RIBBON_D","name":"초원의초밥","ratio":"2","prefix":""},{"kingdom":"RIBBON_D","name":"복수의망치","ratio":"2","prefix":""},{"kingdom":"RIBBON_D","name":"HOWL하울","ratio":"4","prefix":""},{"kingdom":"RIBBON_D","name":"천사열전","ratio":"2","prefix":""},{"kingdom":"RIBBON_D","name":"장미의달빛","ratio":"2","prefix":""},{"kingdom":"RIBBON_D","name":"츄퓨","ratio":"2","prefix":""},{"kingdom":"RIBBON_D","name":"명탐정밍또지","ratio":"2","prefix":""},{"kingdom":"RIBBON_D","name":"삶풀","ratio":"1024","prefix":""},{"kingdom":"RIBBON_D","name":"사솔","ratio":"2","prefix":""},{"kingdom":"RIBBON_D","name":"순살촉","ratio":"2","prefix":""},{"kingdom":"RIBBON_D","name":"얼짱","ratio":"2","prefix":""},{"kingdom":"RIBBON_D","name":"TheLunas","ratio":"4","prefix":""}]
+[
+  {
+    "kingdom": "RIBBON_D",
+    "name": "단밤",
+    "ratio": "1024",
+    "prefix": "★"
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "휴퓨",
+    "ratio": "4096",
+    "prefix": "☆"
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "쓰트",
+    "ratio": "4096",
+    "prefix": "☆"
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "삐누",
+    "ratio": "16",
+    "prefix": "☆"
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "리망",
+    "ratio": "256",
+    "prefix": "☆"
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "꾸우루밍",
+    "ratio": "4",
+    "prefix": "☆"
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "덕밤",
+    "ratio": "256",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "아치베르",
+    "ratio": "2",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "깡호야",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "오키드블룸",
+    "ratio": "2048",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "걸밤",
+    "ratio": "256",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "버거블랑",
+    "ratio": "2",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "빡곰이",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "여명의마도",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "우타동",
+    "ratio": "2048",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "연우닝",
+    "ratio": "4",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "킴과자",
+    "ratio": "4",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "물리선생님",
+    "ratio": "2048",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "닐라바닐라",
+    "ratio": "2048",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "왱두냐",
+    "ratio": "2048",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "츄뚱이",
+    "ratio": "2",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "밍공이",
+    "ratio": "8",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "다솜다솜",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "슈슈베리",
+    "ratio": "512",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "당연한진찰",
+    "ratio": "2048",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "레미마르",
+    "ratio": "32",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "므s",
+    "ratio": "32",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "나이야후냐",
+    "ratio": "2",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "짓쑤",
+    "ratio": "2",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "맛깔고등어로버프",
+    "ratio": "2",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "행복이숑",
+    "ratio": "2",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "김은님",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "찌이S2",
+    "ratio": "2",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "요끄",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "아이솔칸",
+    "ratio": "4",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "르미르르미",
+    "ratio": "8",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "약골오빠",
+    "ratio": "2",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "초원의초밥",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "복수의망치",
+    "ratio": "4",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "HOWL하울",
+    "ratio": "8",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "천사열전",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "장미의달빛",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "츄퓨",
+    "ratio": "4",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "명탐정밍또지",
+    "ratio": "4",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "삶풀",
+    "ratio": "2048",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "사솔",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "순살촉",
+    "ratio": "4",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "얼짱",
+    "ratio": "4",
+    "prefix": ""
+  },
+  {
+    "kingdom": "RIBBON_D",
+    "name": "TheLunas",
+    "ratio": 1,
+    "prefix": ""
+  }
+]
