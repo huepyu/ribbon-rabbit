@@ -253,12 +253,6 @@
   },
   {
     "kingdom": "RIBBON_D",
-    "name": "사솔",
-    "ratio": "16",
-    "prefix": ""
-  },
-  {
-    "kingdom": "RIBBON_D",
     "name": "순살촉",
     "ratio": 1,
     "prefix": ""
