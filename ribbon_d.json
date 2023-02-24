@@ -3,7 +3,7 @@
     "kingdom": "RIBBON_D",
     "name": "단밤",
     "ratio": "8",
-    "prefix": "★"
+    "prefix": ""
   },
   {
     "kingdom": "RIBBON_D",
@@ -21,19 +21,13 @@
     "kingdom": "RIBBON_D",
     "name": "삐누",
     "ratio": "256",
-    "prefix": "☆"
+    "prefix": "★"
   },
   {
     "kingdom": "RIBBON_D",
     "name": "리망",
     "ratio": "4096",
-    "prefix": "☆"
-  },
-  {
-    "kingdom": "RIBBON_D",
-    "name": "꾸우루밍",
-    "ratio": "64",
-    "prefix": "☆"
+    "prefix": ""
   },
   {
     "kingdom": "RIBBON_D",
@@ -163,13 +157,13 @@
   },
   {
     "kingdom": "RIBBON_D",
-    "name": "맛깔고등어로버프",
-    "ratio": "32",
+    "name": "행복이숑",
+    "ratio": 1,
     "prefix": ""
   },
   {
     "kingdom": "RIBBON_D",
-    "name": "행복이숑",
+    "name": "blurz",
     "ratio": 1,
     "prefix": ""
   },

@@ -2,7 +2,7 @@ const kingdomName = 'RIbbon'
 
 const RIBBON_D = {
   code: 'RIBBON_D',
-  name: 'Rlbbon 단밤반',
+  name: 'Rlbbon 삐누반',
 }
 const RIBBON_N = {
   code: 'RIBBON_N',
