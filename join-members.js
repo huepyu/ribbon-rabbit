@@ -29,6 +29,7 @@ function App() {
   const [value, setValue] = React.useState('')
   const [copiedMembers, setCopiedMembers] = React.useState([])
   const [joinedMembers, setJoinedMembers] = React.useState([])
+  const inputRef = React.useRef(null)
 
   console.log(copiedMembers, members)
 
@@ -51,6 +52,7 @@ function App() {
     setJoinedMembers((v) => [...v, member].sort((a, b) => a.name - b.name))
     setCopiedMembers((v) => v.filter((m) => m.id !== member.id))
     setValue('')
+    inputRef.current.focus()
   }
 
   function reset(e, member) {
@@ -112,6 +114,7 @@ function App() {
         )}
         <div className="root-fixed-footer">
           <input
+            ref={inputRef}
             value={value}
             placeholder="참여하는 분의 닉네임을 입력해요 삐누맨."
             onChange={handleChange}
