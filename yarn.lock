@@ -2,21 +2,26 @@
 # yarn lockfile v1
 
 
-"graceful-fs@^4.1.6":
-  "integrity" "sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA=="
-  "resolved" "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.10.tgz"
-  "version" "4.2.10"
+graceful-fs@^4.1.6:
+  version "4.2.10"
+  resolved "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.10.tgz"
+  integrity sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==
 
-"jsonfile@^6.1.0":
-  "integrity" "sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ=="
-  "resolved" "https://registry.npmjs.org/jsonfile/-/jsonfile-6.1.0.tgz"
-  "version" "6.1.0"
+jsonfile@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.npmjs.org/jsonfile/-/jsonfile-6.1.0.tgz"
+  integrity sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==
   dependencies:
-    "universalify" "^2.0.0"
+    universalify "^2.0.0"
   optionalDependencies:
-    "graceful-fs" "^4.1.6"
+    graceful-fs "^4.1.6"
 
-"universalify@^2.0.0":
-  "integrity" "sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ=="
-  "resolved" "https://registry.npmjs.org/universalify/-/universalify-2.0.0.tgz"
-  "version" "2.0.0"
+korean-regexp@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/korean-regexp/-/korean-regexp-1.0.9.tgz#474d9b16e4050a13c496e0066ed857d1933855bd"
+  integrity sha512-rhuYSVkwH2NDskWhaZbzeOC480t/wr8a/WED1gFk60NPeZIM7Ohl1F2/Mtn038V9Op2XXvQ4cSRAhtm44V+lfg==
+
+universalify@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/universalify/-/universalify-2.0.0.tgz"
+  integrity sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==

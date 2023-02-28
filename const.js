@@ -1,3 +1,9 @@
+// major: 메인 기능 변동
+// minor: 사소한 기능 변동
+// patch1: 버그 픽스
+// patch2: 멤버 변경(로컬에서)
+const appVersion = '3.0.0'
+
 const kingdomName = 'Ribbon&Cotton'
 
 const KINGDOM_RIBBON = {

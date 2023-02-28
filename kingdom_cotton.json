@@ -19,12 +19,6 @@
   },
   {
     "kingdom": "KINGDOM_COTTON",
-    "name": "밍공이",
-    "ratio": "512",
-    "prefix": ""
-  },
-  {
-    "kingdom": "KINGDOM_COTTON",
     "name": "다솜다솜",
     "ratio": "64",
     "prefix": ""
@@ -225,6 +219,12 @@
     "kingdom": "KINGDOM_COTTON",
     "name": "엘리공장장",
     "ratio": "1",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_COTTON",
+    "name": "다솜다온아빠",
+    "ratio": 1,
     "prefix": ""
   }
 ]
