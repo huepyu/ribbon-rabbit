@@ -1,16 +1,12 @@
-const kingdomName = 'RIbbon'
+const kingdomName = 'Ribbon&Cotton'
 
-const RIBBON_D = {
-  code: 'RIBBON_D',
-  name: 'Rlbbon 삐누반',
+const KINGDOM_RIBBON = {
+  code: 'KINGDOM_RIBBON',
+  name: 'Rlbbon',
 }
-const RIBBON_N = {
-  code: 'RIBBON_N',
-  name: 'RIbbon 녕코반',
-}
-const RIBBON_Y = {
-  code: 'RIBBON_Y',
-  name: 'RIbbony',
+const KINGDOM_COTTON = {
+  code: 'KINGDOM_COTTON',
+  name: 'Cotton',
 }
 
 let members = []
@@ -18,11 +14,10 @@ let members = []
 async function getMembers() {
   if (members?.length) return members
 
-  const ribbonD = (await axios.get('./ribbon_d.json')).data
-  const ribbonN = (await axios.get('./ribbon_n.json')).data
-  const ribbonY = (await axios.get('./ribbon_y.json')).data
+  const ribbon = (await axios.get('./kingdom_ribbon.json')).data
+  const cotton = (await axios.get('./kingdom_cotton.json')).data
 
-  members = [...ribbonD, ...ribbonN, ...ribbonY]
+  members = [...ribbon, ...cotton]
     .sort((a, b) => {
       const patternNumber = /[0-9]/
       const patternAlphabet = /[a-zA-Z]/
@@ -47,6 +42,8 @@ async function getMembers() {
       id: idx + 1,
       rewards: [],
     }))
+
+  console.log(members)
 
   return members
 }

@@ -28,6 +28,21 @@ class ErrorBoundary extends React.Component {
 }
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Lucky />,
+    },
+    {
+      path: '/join-members',
+      element: <JoinMembers />,
+    },
+  ])
+
+  return <RouterProvider router={router} />
+}
+
+function Lucky() {
   const [step, setStep] = React.useState(1)
   const [state, setState] = React.useState(createNewState())
   const [hasUpdated, setHasUpdated] = React.useState(false)
@@ -207,27 +222,19 @@ function Step1({ goNext, state, setState }) {
         <div className="s1-kingdoms">
           <div
             className={`s1-kingdom ${
-              kingdom.code === RIBBON_D.code ? 's1-active' : ''
+              kingdom.code === KINGDOM_RIBBON.code ? 's1-active' : ''
             }`}
-            onClick={(e) => selectKingdom(e, RIBBON_D)}
+            onClick={(e) => selectKingdom(e, KINGDOM_RIBBON)}
           >
-            {RIBBON_D.name}
+            {KINGDOM_RIBBON.name}
           </div>
           <div
             className={`s1-kingdom ${
-              kingdom.code === RIBBON_N.code ? 's1-active' : ''
+              kingdom.code === KINGDOM_COTTON.code ? 's1-active' : ''
             }`}
-            onClick={(e) => selectKingdom(e, RIBBON_N)}
+            onClick={(e) => selectKingdom(e, KINGDOM_COTTON)}
           >
-            {RIBBON_N.name}
-          </div>
-          <div
-            className={`s1-kingdom ${
-              kingdom.code === RIBBON_Y.code ? 's1-active' : ''
-            }`}
-            onClick={(e) => selectKingdom(e, RIBBON_Y)}
-          >
-            {RIBBON_Y.name}
+            {KINGDOM_COTTON.name}
           </div>
         </div>
       </div>
@@ -1210,4 +1217,4 @@ function Step6({ state }) {
   )
 }
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<Lucky />, document.getElementById('root'))
