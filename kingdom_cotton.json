@@ -2,7 +2,7 @@
   {
     "kingdom": "KINGDOM_COTTON",
     "name": "킴과자",
-    "ratio": "512",
+    "ratio": "1024",
     "prefix": ""
   },
   {
@@ -14,19 +14,19 @@
   {
     "kingdom": "KINGDOM_COTTON",
     "name": "다솜다솜",
-    "ratio": "128",
+    "ratio": "256",
     "prefix": ""
   },
   {
     "kingdom": "KINGDOM_COTTON",
     "name": "레미마르",
-    "ratio": "8",
-    "prefix": ""
+    "ratio": "16",
+    "prefix": "☆"
   },
   {
     "kingdom": "KINGDOM_COTTON",
     "name": "므s",
-    "ratio": "8",
+    "ratio": "16",
     "prefix": ""
   },
   {
@@ -38,7 +38,7 @@
   {
     "kingdom": "KINGDOM_COTTON",
     "name": "초원의초밥",
-    "ratio": 1,
+    "ratio": "2",
     "prefix": ""
   },
   {
@@ -50,7 +50,7 @@
   {
     "kingdom": "KINGDOM_COTTON",
     "name": "삶풀",
-    "ratio": "64",
+    "ratio": "128",
     "prefix": ""
   },
   {
@@ -58,17 +58,17 @@
     "name": "총자비지",
     "ratio": 1,
     "prefix": ""
-  },  
+  },
   {
     "kingdom": "KINGDOM_COTTON",
     "name": "GORAPADUCK",
-    "ratio": "2",
+    "ratio": 1,
     "prefix": ""
   },
   {
     "kingdom": "KINGDOM_COTTON",
     "name": "삐누",
-    "ratio": "8",
+    "ratio": "16",
     "prefix": "★"
   },
   {
@@ -80,7 +80,7 @@
   {
     "kingdom": "KINGDOM_COTTON",
     "name": "곰뮤새",
-    "ratio": "4",
+    "ratio": "8",
     "prefix": ""
   },
   {
@@ -98,7 +98,7 @@
   {
     "kingdom": "KINGDOM_COTTON",
     "name": "나이야가라",
-    "ratio": "8",
+    "ratio": "16",
     "prefix": ""
   },
   {
@@ -122,13 +122,13 @@
   {
     "kingdom": "KINGDOM_COTTON",
     "name": "해적리나",
-    "ratio": 1,
+    "ratio": "2",
     "prefix": ""
   },
   {
     "kingdom": "KINGDOM_COTTON",
     "name": "아트테코",
-    "ratio": "2",
+    "ratio": 1,
     "prefix": ""
   },
   {
@@ -140,13 +140,13 @@
   {
     "kingdom": "KINGDOM_COTTON",
     "name": "쇼앤",
-    "ratio": "8",
+    "ratio": "16",
     "prefix": ""
   },
   {
     "kingdom": "KINGDOM_COTTON",
     "name": "민라클",
-    "ratio": "8",
+    "ratio": "16",
     "prefix": ""
   },
   {
@@ -164,31 +164,37 @@
   {
     "kingdom": "KINGDOM_COTTON",
     "name": "상냥한나무",
-    "ratio": "4",
+    "ratio": "8",
     "prefix": ""
   },
   {
     "kingdom": "KINGDOM_COTTON",
     "name": "엘리공장장",
-    "ratio": "2",
+    "ratio": "4",
     "prefix": ""
   },
   {
     "kingdom": "KINGDOM_COTTON",
     "name": "날라리후냐",
-    "ratio": "1",
+    "ratio": "2",
     "prefix": ""
   },
   {
     "kingdom": "KINGDOM_COTTON",
     "name": "히엘니",
-    "ratio": "1",
+    "ratio": "2",
     "prefix": ""
   },
   {
     "kingdom": "KINGDOM_COTTON",
     "name": "엘리본",
-    "ratio": "1",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "마왕후냐",
+    "ratio": 1,
     "prefix": ""
   }
 ]
