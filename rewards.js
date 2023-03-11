@@ -7,6 +7,7 @@ const reward = {
   // 킹덤 던전
   increaseWood: '인크리스 우드',
   increaseFire: '인크리스 파이어',
+  armorMinidevil: '방어구 소마인의 구슬 100개 상자',
 
   // 킹덤 디펜스
   advancedSkillBook: '고급 스킬북',
@@ -45,6 +46,7 @@ const group = {
 
   increaseWood: 'increaseWood',
   increaseFire: 'increaseFire',
+  armorMinidevil: 'armorMinidevil',
 
   advancedPages: 'advancedPages', // 고급 페이지 실패
   advancedSkillBook: 'advancedSkillBook', // 고급 스킬북
@@ -67,6 +69,7 @@ const groupIcon = {
 
   increaseWood: 'assets/items/normal_skill_book.png',
   increaseFire: 'assets/items/normal_skill_book.png',
+  armorMinidevil: 'assets/items/armor_minidevil.png',
 
   advancedPages: 'assets/items/skill_book_box.png',
   advancedSkillBook: 'assets/items/skill_book_box.png',
@@ -173,7 +176,22 @@ const products = [
     isSpecial: false,
     line: 3,
   },
-
+  {
+    name: '엔트 석상 7단계: 인크리스 우드 2권',
+    rewards: [reward.increaseWood, reward.increaseWood],
+    type: productType.tree,
+    group: group.increaseWood,
+    isSpecial: false,
+    line: 3,
+  },
+  {
+    name: '엔트 석상 7단계: 방어구 소마인의 구슬 100개 상자',
+    rewards: [reward.armorMinidevil],
+    type: productType.normal,
+    group: group.armorMinidevil,
+    isSpecial: false,
+    line: 3,
+  },
   {
     name: '화염의 기사 라스 4단계: 인크리스 파이어',
     rewards: [reward.increaseFire],
@@ -198,7 +216,22 @@ const products = [
     isSpecial: false,
     line: 4,
   },
-
+  {
+    name: '화염의 기사 라스 7단계: 인크리스 파이어 2권',
+    rewards: [reward.increaseFire, reward.increaseFire],
+    type: productType.fire,
+    group: group.increaseFire,
+    isSpecial: false,
+    line: 4,
+  },
+  {
+    name: '화염의 기사 라스 7단계: 방어구 소마인의 구슬 100개 상자',
+    rewards: [reward.armorMinidevil],
+    type: productType.normal,
+    group: group.armorMinidevil,
+    isSpecial: false,
+    line: 4,
+  },
   {
     name: '왕위 쟁탈전 승리: 왕성 스킬북 상자',
     rewards: [reward.throneSkillBook],
@@ -289,6 +322,14 @@ const products = [
     rewards: [reward.releasementScroll, reward.releasementScroll],
     type: productType.hotpink,
     group: group.releasementScroll,
+    isSpecial: true,
+    line: 8,
+  },
+  {
+    name: '이벤트: 신묘한 액막이 인형',
+    rewards: [reward.amuletDoll],
+    type: productType.normal,
+    group: group.amuletDoll,
     isSpecial: true,
     line: 8,
   },
