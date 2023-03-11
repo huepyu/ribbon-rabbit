@@ -172,5 +172,23 @@
     "name": "엘리공장장",
     "ratio": "2",
     "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_COTTON",
+    "name": "날라리후냐",
+    "ratio": "1",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_COTTON",
+    "name": "히엘니",
+    "ratio": "1",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_COTTON",
+    "name": "엘리본",
+    "ratio": "1",
+    "prefix": ""
   }
 ]
