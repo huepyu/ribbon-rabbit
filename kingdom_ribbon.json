@@ -1,1 +1,303 @@
-[{"kingdom":"KINGDOM_RIBBON","name":"단밤","ratio":"128","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"휴퓨","ratio":"256","prefix":"☆"},{"kingdom":"KINGDOM_RIBBON","name":"쓰트","ratio":"128","prefix":"☆"},{"kingdom":"KINGDOM_RIBBON","name":"삐덕","ratio":"16","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"깡호야","ratio":"2","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"삐걸","ratio":"16","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"버거블랑","ratio":"2","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"여명의마도","ratio":"2","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"우타동","ratio":"64","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"연우닝","ratio":"1024","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"물리선생님","ratio":"64","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"닐라바닐라","ratio":"128","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"왱두냐","ratio":1,"prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"슈슈베리","ratio":"128","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"당연한진찰","ratio":1,"prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"나이야후냐","ratio":"512","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"짓쑤","ratio":"512","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"Blurz","ratio":"8","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"찌이S2","ratio":1,"prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"HOWL하울","ratio":"8","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"츄퓨","ratio":"4","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"순살촉","ratio":"8","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"TheLunas","ratio":"64","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"엘리","ratio":"64","prefix":"☆"},{"kingdom":"KINGDOM_RIBBON","name":"노견제","ratio":"32","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"HyunA","ratio":1,"prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"리망","ratio":1,"prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"아기하양","ratio":1,"prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"날라리욤","ratio":2,"prefix":"☆"},{"kingdom":"KINGDOM_RIBBON","name":"505호","ratio":"2","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"탱X구","ratio":1,"prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"굿에프터눈","ratio":"2","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"그리운나의고향","ratio":1,"prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"심심후냐","ratio":"8","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"유한량","ratio":1,"prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"아기코딱징","ratio":"2","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"유기농브로콜리","ratio":"128","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"머라카냥","ratio":"4","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"능람","ratio":1,"prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"복덩이후냐","ratio":"512","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"신이러브","ratio":1,"prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"소나기","ratio":"2","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"클린아티","ratio":"128","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"춤추는나무","ratio":"8","prefix":""},{"kingdom":"KINGDOM_RIBBON","name":"아기까망","ratio":"32","prefix":""}]
+[
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "단밤",
+    "ratio": "128",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "휴퓨",
+    "ratio": "256",
+    "prefix": "☆"
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "쓰트",
+    "ratio": "128",
+    "prefix": "☆"
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "삐덕",
+    "ratio": "16",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "깡호야",
+    "ratio": "2",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "삐걸",
+    "ratio": "16",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "버거블랑",
+    "ratio": "2",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "여명의마도",
+    "ratio": "2",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "우타동",
+    "ratio": "64",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "연우닝",
+    "ratio": "1024",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "물리선생님",
+    "ratio": "64",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "닐라바닐라",
+    "ratio": "128",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "왱두냐",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "슈슈베리",
+    "ratio": "128",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "당연한진찰",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "나이야후냐",
+    "ratio": "512",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "짓쑤",
+    "ratio": "512",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "Blurz",
+    "ratio": "8",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "찌이S2",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "HOWL하울",
+    "ratio": "8",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "츄퓨",
+    "ratio": "4",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "순살촉",
+    "ratio": "8",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "TheLunas",
+    "ratio": "64",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "엘리",
+    "ratio": "64",
+    "prefix": "☆"
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "노견제",
+    "ratio": "32",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "HyunA",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "리망",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "아기하양",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "날라리욤",
+    "ratio": 2,
+    "prefix": "☆"
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "505호",
+    "ratio": "2",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "탱X구",
+    "ratio": 1,
+    "prefix": ""
+  },
+
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "그리운나의고향",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "심심후냐",
+    "ratio": "8",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "유한량",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "아기코딱징",
+    "ratio": "2",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "유기농브로콜리",
+    "ratio": "128",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "머라카냥",
+    "ratio": "4",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "능람",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "복덩이후냐",
+    "ratio": "512",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "신이러브",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "소나기",
+    "ratio": "2",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "클린아티",
+    "ratio": "128",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "춤추는나무",
+    "ratio": "8",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "아기까망",
+    "ratio": "32",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "다솜다솜",
+    "ratio": "256",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "레미마르",
+    "ratio": "16",
+    "prefix": "☆"
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "므s",
+    "ratio": "16",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "삶풀",
+    "ratio": "128",
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "총자비지",
+    "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_RIBBON",
+    "name": "킴과자",
+    "ratio": "1024",
+    "prefix": ""
+  }
+]

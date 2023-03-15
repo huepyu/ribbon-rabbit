@@ -1,32 +1,8 @@
 [
   {
     "kingdom": "KINGDOM_COTTON",
-    "name": "킴과자",
-    "ratio": "1024",
-    "prefix": ""
-  },
-  {
-    "kingdom": "KINGDOM_COTTON",
     "name": "츄뚱이",
     "ratio": 1,
-    "prefix": ""
-  },
-  {
-    "kingdom": "KINGDOM_COTTON",
-    "name": "다솜다솜",
-    "ratio": "256",
-    "prefix": ""
-  },
-  {
-    "kingdom": "KINGDOM_COTTON",
-    "name": "레미마르",
-    "ratio": "16",
-    "prefix": "☆"
-  },
-  {
-    "kingdom": "KINGDOM_COTTON",
-    "name": "므s",
-    "ratio": "16",
     "prefix": ""
   },
   {
@@ -44,18 +20,6 @@
   {
     "kingdom": "KINGDOM_COTTON",
     "name": "명탐정밍또지",
-    "ratio": 1,
-    "prefix": ""
-  },
-  {
-    "kingdom": "KINGDOM_COTTON",
-    "name": "삶풀",
-    "ratio": "128",
-    "prefix": ""
-  },
-  {
-    "kingdom": "KINGDOM_COTTON",
-    "name": "총자비지",
     "ratio": 1,
     "prefix": ""
   },
@@ -192,9 +156,15 @@
     "prefix": ""
   },
   {
-    "kingdom": "KINGDOM_RIBBON",
+    "kingdom": "KINGDOM_COTTON",
     "name": "마왕후냐",
     "ratio": 1,
+    "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_COTTON",
+    "name": "굿에프터눈",
+    "ratio": "2",
     "prefix": ""
   }
 ]
