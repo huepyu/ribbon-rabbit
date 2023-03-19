@@ -1098,7 +1098,13 @@ function Step6({ state }) {
   }, [])
 
   const updateMapJson = React.useMemo(() => {
-    const reset = [...state.specialDrawers, ...absentees].map((id) => {
+    let resetTargets = [...state.specialDrawers]
+
+    if (state.kingdom.code.toLowerCase() !== 'kingdom_cotton') {
+      resetTargets = [...resetTargets, ...absentees]
+    }
+
+    const reset = resetTargets.map((id) => {
       return state.members.find((m) => m.id === id).name
     })
 
@@ -1180,8 +1186,11 @@ function Step6({ state }) {
         })}
       </div>
       <div className="s6-drawers-text">
-        # {state.kingdom.name} - 불참자 (당첨 버프 초기화 대상, 총{' '}
-        {absentees.length}
+        # {state.kingdom.name} - 불참자 (
+        {state.kingdom.code.toLowerCase() !== 'kingdom_cotton'
+          ? '당첨 버프 초기화 대상, '
+          : ''}
+        총 {absentees.length}
         명)
         {absentees.map((id, idx) => {
           const { prefix, name } = state.members.find((m) => m.id === id)

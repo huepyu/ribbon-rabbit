@@ -254,14 +254,6 @@ const products = [
     line: 5,
   },
   {
-    name: '왕위 쟁탈전 승리: 흑마법 결정 100개 x 2',
-    rewards: [reward.darkMagicCrystal100, reward.darkMagicCrystal100],
-    type: productType.normal,
-    group: group.darkMagicCrystal100,
-    isSpecial: false,
-    line: 5,
-  },
-  {
     name: '왕위 쟁탈전 승리: 블랙 탈 것 염색약 2개',
     rewards: [reward.blackRidingDye, reward.blackRidingDye],
     type: productType.normal,
@@ -283,14 +275,6 @@ const products = [
     type: productType.normal,
     group: group.amuletDoll,
     isSpecial: true,
-    line: 6,
-  },
-  {
-    name: '왕위 쟁탈전 패배: 흑마법 결정 100개',
-    rewards: [reward.darkMagicCrystal100],
-    type: productType.normal,
-    group: group.darkMagicCrystal100,
-    isSpecial: false,
     line: 6,
   },
   {
