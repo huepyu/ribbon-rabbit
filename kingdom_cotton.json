@@ -172,5 +172,17 @@
     "name": "땡사마",
     "ratio": 1,
     "prefix": ""
+  },
+  {
+    "kingdom": "KINGDOM_COTTON",
+    "name": "레미마르",
+    "ratio": "128",
+    "prefix": "☆"
+  },
+  {
+    "kingdom": "KINGDOM_COTTON",
+    "name": "므s",
+    "ratio": "128",
+    "prefix": ""
   }
 ]
