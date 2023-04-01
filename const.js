@@ -2,7 +2,7 @@
 // minor: 사소한 기능 변동
 // patch1: 버그 픽스
 // patch2: 멤버 변경(로컬에서)
-const appVersion = '3.2.1'
+const appVersion = '3.2.2'
 
 const kingdomName = 'Ribbon&Cotton'
 
